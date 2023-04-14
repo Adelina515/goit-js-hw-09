@@ -16,3 +16,10 @@ img {
   display: block;
   max-width: 100%;
 }
+button{
+  background-color: rgb(37, 191, 140);
+}
+button:disabled{
+  background-color: #757575;
+  cursor: not-allowed;
+}
