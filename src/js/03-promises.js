@@ -16,7 +16,7 @@ refsForm.addEventListener('submit', handleSubmitForm);
 
 function handleSubmitForm(ev) {
   ev.preventDefault();
-  let delay = Number(refsForm.amount.value);
+  let delay = Number(refsForm.amount);
   for (let i = 1; i <= refsForm.amount.value; i += 1) {
   // console.log(i);
   createPromise(i, delay)

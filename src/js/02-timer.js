@@ -26,6 +26,7 @@ flatpickr('input#datetime-picker', options);
 
 let changeTimeToEnd;
 let remainderDates;
+let timerId;
 function currentSelectDate(selectedDates) {
   const currentDate = Date.now();
  if (selectedDates < currentDate) {
