@@ -16,17 +16,17 @@ refsForm.addEventListener('submit', handleSubmitForm);
 
 function handleSubmitForm(ev) {
   ev.preventDefault();
-  let delay = Number(refsForm.amount);
+  let delayTwo = Number(refsForm.amount);
   for (let i = 1; i <= refsForm.amount.value; i += 1) {
   // console.log(i);
-  createPromise(i, delay)
+  createPromise(i, delayTwo)
   .then(({ position, delay }) => {
     Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`);
   })
   .catch(({ position, delay }) => {
     Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`);
   });
-  delay += Number(refsForm.amount.value);  
+  delayTwo += Number(refsForm.step.value);  
 }
 }
 
