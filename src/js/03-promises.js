@@ -26,7 +26,7 @@ function handleSubmitForm(ev) {
   .catch(({ position, delay }) => {
     Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`);
   });
-  delayTwo += Number(refsForm.step.value);  
+  delay += Number(refsForm.step.value);  
 }
 }
 
