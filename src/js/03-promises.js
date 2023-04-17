@@ -16,8 +16,10 @@ refsForm.addEventListener('submit', handleSubmitForm);
 
 function handleSubmitForm(ev) {
   ev.preventDefault();
-  let delayTwo = Number(refsForm.amount.value);
-  for (let i = 1; i <= refsForm.amount.value; i += 1) {
+  let amount = Number(refsForm.amount.value);
+  let step = Number(refsForm.step.value);
+  let delayTwo = Number(refsForm.delay.value);
+  for (let i = 1; i <= amount; i += 1) {
   // console.log(i);
   createPromise(i, delayTwo)
   .then(({ position, delay }) => {
@@ -26,7 +28,7 @@ function handleSubmitForm(ev) {
   .catch(({ position, delay }) => {
     Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`);
   });
-  delay += Number(refsForm.step.value);  
+  delayTwo += step;  
 }
 }
 
